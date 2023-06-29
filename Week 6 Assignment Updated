@@ -1,0 +1,46 @@
+#Zach Spivey Week 6 Assignment
+#program description: After prompting user to create password the program uses a function (validpassword(password)). The function then runs a series of "for/in" loops to determine if password meets the parameters set.
+
+def main():
+    print() 
+print("Your password must contain 6-15 characters, one digit, one letter and no spaces.")#informing user of password parameters
+password = input("Enter your password here:\t") #user enters password here
+def validPassword (password) : #default values to test the password strength
+    alpha = False
+    digit = False
+    spaces = [" "]
+
+    for i in password :
+        if i.isalpha() : #check for letter requirement
+            alpha = True
+        elif i.isdigit(): #check for numeric requirement
+            digit = True
+        elif i.isspace() : #check for use of space
+            spaces = True
+    def alphacheck(alpha):
+      if alpha != True : #error message for a password missing a letter
+         print("Invalid Passord!")  , print("Error password must contain one letter.")
+         return False
+    def digitcheck(digit):
+      if digit != True : 
+        print("Invalid Password!") , print("Error Password MUST contain one number.")
+        return False
+    def spacescheck(spaces):
+      if spaces == True : # error message for containing spaces
+        print("Invalid Passord!") , print("Error password must contain NO spaces.")
+        return False
+    def get passwordlength(password)
+      if len(password) < 6 : #error message for password is too short
+        print("Invalid Passord!") , print("Error passowrd is too short")
+        return False
+    if len(password) > 15 : # error message
+        print("Invalid Passord!") , print("Error password is too long.")
+        return False
+       
+    else :
+        return True
+
+if validPassword(password) == True : #notice to user that their password passed the checks.
+    print ("Password saved successfully.")
+
+main
